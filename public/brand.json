@@ -1,0 +1,51 @@
+[
+    {
+        "id" : 1,
+        "name": "Toyota",
+        "banner_image_one": "https://i.ibb.co/bvyyBVs/toyota-one.jpg",
+        "banner_image_two": "https://i.ibb.co/7C7RwtC/toyota-two.jpg",
+        "banner_image_three": "https://i.ibb.co/VghwZGL/toyota-three.jpg",
+        "image_url": "https://i.ibb.co/9Z56NQP/toyota-company-presentation-1-320.webp"
+      },
+      {
+        "id" : 2,
+        "name": "Ford",
+        "banner_image_one": "https://i.ibb.co/Ytw9PJp/ford-one.jpg",
+        "banner_image_two": "https://i.ibb.co/PxNvDS1/ford-two.jpg",
+        "banner_image_three": "https://i.ibb.co/Bq6sVDH/ford-three.jpg",
+        "image_url": "https://i.ibb.co/RbddNyW/190522-ford-dealership-cs-805a.webp"
+      },
+      {
+        "id" : 3,
+        "name": "BMW",
+        "banner_image_one": "https://i.ibb.co/pyLZfbL/bmw-one.jpg",
+        "banner_image_two": "https://i.ibb.co/PcQZmWS/bmw-two.jpg",
+        "banner_image_three": "https://i.ibb.co/9pbRrcG/bmw-three.png",
+        "image_url": "https://i.ibb.co/nMZP0gt/P90385570-the-new-bmw-communication-logo-bmw-new-corporate-identity-for-online-and-offline-communica.jpg"
+      },
+      {
+        "id" : 4,
+        "name": "Mercedes-Benz",
+        "banner_image_one": "https://i.ibb.co/18tFr83/marcidis-one.jpg",
+        "banner_image_two": "https://i.ibb.co/12ZTJRK/marcidis-two.jpg",
+        "banner_image_three": "https://i.ibb.co/2tHsjMr/marcidis-three.jpg",
+        "image_url": "https://i.ibb.co/ZJvwrfL/banner-merc.webp"
+      },
+      {
+        "id" : 5,
+        "name": "Tesla",
+        "banner_image_one": "https://i.ibb.co/xfbpt41/tesla-one.jpg",
+        "banner_image_two": "https://i.ibb.co/YtQLLMV/t5esla-two.jpg",
+        "banner_image_three": "https://i.ibb.co/4mJn0vf/tesla-three.jpg",
+        "image_url": "https://i.ibb.co/GRB19SM/960x0.webp"
+      },
+      {
+        "id" : 6,
+        "name": "Honda",
+        "banner_image_one": "https://i.ibb.co/Wv7CDtQ/Honda-one.webp",
+        "banner_image_two": "https://i.ibb.co/bvV9zB2/Honda-two.webp",
+        "banner_image_three": "https://i.ibb.co/BcFg6VZ/Honda-three.jpg",
+        "image_url": "https://i.ibb.co/y67x1PN/download.jpg"
+      }
+          
+]
