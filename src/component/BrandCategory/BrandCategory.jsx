@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const BrandCategory = ({cart}) => {
     const {_id, Brand, brand_image} = cart || {}
     return (
-        <div>
+        <div className=' pb-10 mt-10 '>
           
             <Link to={`/branddetails/${Brand}`} >
             <div className="card   w-64 md:80 lg:w-96   bg-base-100 shadow-xl">

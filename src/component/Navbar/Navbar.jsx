@@ -1,10 +1,13 @@
 
 import { Link, NavLink } from "react-router-dom";
 import logo from  "./PhotoRoom-20231019_133331.png";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
   
+  const { user, logOut } = useContext(AuthContext);
 
   const handleSignOut = () => {
     logOut()
@@ -70,6 +73,13 @@ const Navbar = () => {
 
          <div className="  navbar-end gap-2">
          
+         {user ? (
+            <button onClick={handleSignOut} className=" btn ">Sign Out</button>
+          ) : (
+            <Link to="/signin">
+              <button className=" btn "> Login</button>
+            </Link>
+          )}
 
           <Link to="/signUp">
             <button className=" btn "> SignUp</button>

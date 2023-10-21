@@ -13,6 +13,7 @@ import CarDetailsMap from "./component/CarDetailsPage/CarDetailsMap.jsx";
 import SignIn from "./component/Signup/SignIn.jsx";
 import SignUp from "./component/Signup/SignUp.jsx";
 import AuthProvider from "./component/Provider/AuthProvider.jsx";
+import Blog from "./component/Blog/Blog.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/cartCategory`),
+        loader: () => fetch(`http://localhost:5000/cartCategory`)
       },
       {
         path: "/AddCart",
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
         path: "/branddetails/:brandName",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cart/${params.brandName}`),
+          fetch(`http://localhost:5000/cart/${params.brandName}`)
       },
       {
         path: "/",
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/carDetails/:id",
         element: <CarDetailsMap></CarDetailsMap>,
-        loader: ({params}) => fetch(`http://localhost:5000/cart/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/cart/${params.ObjectId}`)
       },
       {
         path: "/signin",
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       }
     ],
   },

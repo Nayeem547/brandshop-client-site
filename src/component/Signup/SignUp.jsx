@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { FaEye, FaEyeSlash} from "react-icons/fa";
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import auth from "../../Firebase/firebase.config";
 
 const SignUp = () => {
 
@@ -21,6 +22,8 @@ const SignUp = () => {
     const {createUser} = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
+
+    const [success, setSuccess] = useState('');
 
     const [showPassword, setShowPassword] = useState(false);
     const handleRegister = e => {
@@ -46,6 +49,18 @@ const SignUp = () => {
         createUser( email, password)
         .then(result =>{
             console.log(result.user);
+            const user = {email};
+            fetch(`http://localhost:5000/user`, {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(user),
+              })
+                .then((res) => res.json())
+                .then(data => {
+                    console.log(data);
+                })
             setSuccess();
             swal("Done", "Registration Succesfully Created", "success");
         })

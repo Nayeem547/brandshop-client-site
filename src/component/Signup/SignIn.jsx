@@ -1,6 +1,66 @@
 import React from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
+import { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useState } from 'react';
+import { FaEye, FaEyeSlash} from "react-icons/fa";
+import auth from "../../Firebase/firebase.config";
 
 const SignIn = () => {
+
+    const {signIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const provider = new GoogleAuthProvider();
+
+
+    const handleGooglSignIN = () => {
+        signInWithPopup(auth, provider)
+        .then()
+        .catch()
+    }
+
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const email = form.get('email');
+    const password = form.get('password');
+    console.log(email, password);
+
+    // const email = e.target.email.value;
+    // const password = e.target.password.value;
+    // console.log(email, password);
+      
+    if(password.length < 6){
+        setRegisterError('Password Should Be a leat 6 character or Longer');
+        return;
+    }
+    else if(!/[A-Z]/.test(password)){
+        setRegisterError('Your Password should be at least one Upper Case Charecters')
+        return;
+    }
+
+    setRegisterError('');
+    setSuccess();
+
+    signIn(email, password)
+    .then(result =>{
+        console.log(result.user);
+        setSuccess();
+        swal("Done", "User Login Succesful", "success");
+        navigate(location?.state ? location.state : "/");
+    })
+    .catch(error => {
+        console.error(error);
+        swal("Sorry!", "Email Already Used!", "error");
+    })
+  };
     return (
         <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">

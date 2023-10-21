@@ -1,33 +1,32 @@
 import React from 'react';
 import CarDetails from './CarDetails';
-import { useLoaderData} from 'react-router-dom';
-// import { useState } from 'react';
-// import { useEffect } from 'react';
+import { useLoaderData, useParams} from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
-const CarDetailsMap = () => {
+const CarDetailsMap = ({}) => {
 
-    // const [cart, setCart] = useState({});
+    const [cart, setCart] = useState({});
 
-    // const {_id} = useParams();
-    // console.log(_id);
+    const {id} = useParams();
+    console.log(id);
 
      const cartes = useLoaderData()
      console.log(cartes);
        
-    //  useEffect(()=> {
+     useEffect(()=> {
             
-    //     const findCart = cartes.find(cart=>cart._id === _id);
-    //     setCart(findCart);
+        // const findCart = cartes.find(cart=>cart._id === _id);
+        // setCart(findCart);
 
-    //  }, [_id, cartes]);
+     }, [id, cartes]);
 
     return (
-        <div className='   mx-auto itemes-center grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 ' >
+        <div className='  mx-auto text-center flex flex-col w-[1000px]  mt-20 justify-center  itemes-center  ' >
              
-             {
-                cartes.map( cart => <CarDetails key={cart._id} cart={cart} > </CarDetails>)
-             }
+              <CarDetails key={cart.id}  cart={cartes} > </CarDetails>
+              
         
              </div>
     );
