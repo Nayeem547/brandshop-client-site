@@ -46,7 +46,7 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-[#701e43] px-3 py-2 text-white rounded-tl-3xl rounded-br-3xl  "
+                    ? "bg-yellow-500 px-3 py-2 text-white rounded-lg  "
                     : ""
                 }
               >
@@ -61,7 +61,7 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? " bg-[#701e43] px-3 py-2 text-white rounded-tl-3xl rounded-br-3xl "
+                    ? "bg-yellow-500 px-3 py-2 text-white rounded-lg "
                     : ""
                 }
               >
