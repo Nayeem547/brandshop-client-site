@@ -5,10 +5,10 @@ import Cardmap from "../BrandCategory/Cardmap";
 import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
-  const getCarded = useLoaderData();
-  const [carded, setCarded] = useState([]);
+  const getCarts = useLoaderData();
+  const [cart, setCart] = useState([]);
 useEffect(() => {
-  setCarded(getCarded);
+  setCart(getCarts);
 }, []);
   return (
     <div>
@@ -18,7 +18,7 @@ useEffect(() => {
 
       <div className=" items-center text-center flex justify-center flex-col gap-5 bg-sky-950 " >
       <h2 className='  text-3xl text-white font-extrabold ' >Brand Category</h2>
-       <Cardmap carded={carded} ></Cardmap>
+       <Cardmap cart={cart} ></Cardmap>
       </div>
     </div>
   );

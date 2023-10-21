@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import BrandPages from './BrandPages';
-import { useLoaderData, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import BrandPages from "./BrandPages";
+import { useLoaderData, useParams } from "react-router-dom";
+
 
 const BrandDetails = () => {
-    const [card, setCard] = useState({});
-    
-    const {id} = useParams();
-    console.log(id);
+//   const [cart, setCart] = useState({});
 
-    const carded = useLoaderData();
-        console.log(carded);
+//    const { _id } = useParams();
+//    console.log(_id);
 
-        useEffect(()=> {
-            
-            const findCard = carded?.find(card=>card.id == id);
-            setCard(findCard);
- 
-         }, [id, carded]);
-        
-        
-    return (
-        <div className='flex   justify-center' >
-          <BrandPages  card={card} ></BrandPages>
-           
-        </div>
-    );
+  const cartes = useLoaderData();
+    // console.log(cartes);
+
+//   useEffect(() => {
+//     const findCard = cartes?.find((cart) => cart._id ==  _id);
+//     setCart(findCard);
+//   }, [_id, cartes]);
+
+  return (
+    <div>
+      <div className="flex   justify-center">
+        <BrandPages cart={cartes}></BrandPages>
+      </div>
+
+     
+    </div>
+  );
 };
 
 export default BrandDetails;
