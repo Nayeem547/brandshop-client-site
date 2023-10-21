@@ -120,7 +120,7 @@ const SignUp = () => {
            {
               registerError && <p className="w-64 pl-4 pr-4 pb-2 text-[#fc032c] text-sm italic  " >{registerError}</p>
            }
-           <p className=' pl-4 pr-4 pb-2' >Already have an account please<Link className=' text-blue-600 ' to="/">Login</Link>  </p>
+           <p className=' pl-4 pr-4 pb-2' >Already have an account please<Link className=' text-blue-600 ' to="/signin">Login</Link>  </p>
           </div>
         </div>
       </div>
