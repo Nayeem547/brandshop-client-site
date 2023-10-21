@@ -9,6 +9,10 @@ import Home from "./component/Home/Home.jsx";
 import MainLayout from "./component/MainLayout/MainLayout.jsx";
 import BrandDetails from "./component/BrandPages/BrandDetails.jsx";
 import CardData from "./component/CardData/CardData.jsx";
+import CarDetailsMap from "./component/CarDetailsPage/CarDetailsMap.jsx";
+import SignIn from "./component/Signup/SignIn.jsx";
+import SignUp from "./component/Signup/SignUp.jsx";
+import AuthProvider from "./component/Provider/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,12 +39,28 @@ const router = createBrowserRouter([
         element: <CardData></CardData>,
         loader: () => fetch(`http://localhost:5000/cart`),
       },
+      {
+        path: "/carDetails/:id",
+        element: <CarDetailsMap></CarDetailsMap>,
+        loader: ({params}) => fetch(`http://localhost:5000/cart/${params.id}`)
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
+
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
+      }
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

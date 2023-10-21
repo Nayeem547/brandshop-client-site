@@ -68,19 +68,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-         {/* <div className="  navbar-end gap-2">
-          { (
-            <button onClick={handleSignOut} className=" btn ">Sign Out</button>
-          ) : (
-            <Link to="/login">
-              <button className=" btn "> Login</button>
-            </Link>
-          )}
+         <div className="  navbar-end gap-2">
+         
 
-          <Link to="/register">
-            <button className=" btn "> Regester</button>
+          <Link to="/signUp">
+            <button className=" btn "> SignUp</button>
           </Link>
-        </div>  */}
+        </div> 
       </nav>
     </div>
   );

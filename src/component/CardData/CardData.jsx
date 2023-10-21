@@ -26,9 +26,13 @@ const CardData = ({}) => {
     return (
         <div>
             <h1>Card item : </h1>
+            <div className=" grid grid-cols-2 gap-4  ">
+
+            
             {
                 cartes.map((cart) => <CardBox key={cart._id} cart={cart} ></CardBox> )
             }
+            </div>
         </div>
     );
 };

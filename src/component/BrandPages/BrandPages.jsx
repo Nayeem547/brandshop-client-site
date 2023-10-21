@@ -97,7 +97,7 @@ const BrandPages = ({ cart }) => {
         </Slider>
       </div>
 
-      <div>
+      <div  >
         <CardData></CardData>
       </div>
     </div>
