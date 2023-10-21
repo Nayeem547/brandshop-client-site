@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/cartCategory`)
+        loader: () => fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cartCategory`)
       },
       {
         path: "/AddCart",
@@ -34,17 +34,17 @@ const router = createBrowserRouter([
         path: "/branddetails/:brandName",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cart/${params.brandName}`)
+          fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cart/${params.brandName}`)
       },
       {
         path: "/",
         element: <CardData></CardData>,
-        loader: () => fetch(`http://localhost:5000/cart`),
+        loader: () => fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cart`),
       },
       {
         path: "/carDetails/:id",
         element: <PrivateRoute><CarDetailsMap></CarDetailsMap></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/cart/details/${params.id}`)
+        loader: ({params}) => fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cart/details/${params.id}`)
       },
       {
         path: "/signin",

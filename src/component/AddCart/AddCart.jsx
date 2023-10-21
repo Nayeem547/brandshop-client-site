@@ -26,7 +26,7 @@ const AddCart = () => {
     };
   
 
-    fetch(`http://localhost:5000/cart`, {
+    fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cart`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -46,7 +46,7 @@ const AddCart = () => {
         }
       });
 
-    fetch("http://localhost:5000/cartCategory", {
+    fetch("https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cartCategory", {
       method: "POST",
       headers: {
         "content-type": "application/json",

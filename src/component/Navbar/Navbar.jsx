@@ -78,7 +78,7 @@ const Navbar = () => {
         </div>
 
         <div className="  navbar-end gap-2">
-          <button onClick={() => handleBgMode()}>
+          <button className="btn" onClick={() => handleBgMode()}>
             {themeStatus ? "Light" : "Dark"}
           </button>
 

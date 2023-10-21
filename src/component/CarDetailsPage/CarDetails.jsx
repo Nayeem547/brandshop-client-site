@@ -9,7 +9,7 @@ const CarDetails = ({cart}) => {
     const [brandDetails, setbrandDetails] = useState({});
   
     useEffect(() => {
-      fetch(`http://localhost:5000/cart/${ObjectId}`)
+      fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cart/${ObjectId}`)
         .then((res) => res.json())
         .then((data) => setbrandDetails(data[0]));
     }, []);

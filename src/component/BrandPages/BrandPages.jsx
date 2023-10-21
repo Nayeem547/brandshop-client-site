@@ -6,6 +6,7 @@ import CardData from "../CardData/CardData";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import Footer from "../Footer/Footer";
 
 // import CardData from '../CardData/CardData';
 const BrandPages = ({ cart }) => {
@@ -13,7 +14,7 @@ const BrandPages = ({ cart }) => {
   const [brandInfo, setBrandInfo] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cartCategory/${brandName}`)
+    fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cartCategory/${brandName}`)
       .then((res) => res.json())
       .then((data) => setBrandInfo(data[0]));
   }, []);
@@ -100,6 +101,9 @@ const BrandPages = ({ cart }) => {
       <div  >
         <CardData></CardData>
       </div>
+      <footer>
+      <Footer></Footer>
+    </footer>
     </div>
   );
 };

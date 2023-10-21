@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
+
 
 
 const CardBox = ({cart}) => {
     const {_id, names, image, Brand,  Price,  description} = cart;
       
     // useEffect(() => {
-    //   fetch(`http://localhost:5000/cartCategory/${brandName}`)
+    //   fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cartCategory/${brandName}`)
     //     .then((res) => res.json())
     //     .then((data) => setBrandInfo(data[0]));
     // }, []);
@@ -27,6 +28,7 @@ const CardBox = ({cart}) => {
     
   </div>
 </div>
+    
         </div>
     );
 };
