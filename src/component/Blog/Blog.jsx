@@ -42,8 +42,11 @@ const Blog = () => {
         </div>
       </div>
             </div>
-            <div className=' mt-10 bg-blue-200 pb-16 pt-16 '>
+            <div className=' mt-10 bg-blue-200 pb-16 pt-14 '>
                <WEdo></WEdo>
+               <div>
+                
+               </div>
             </div>
 
             <footer>
