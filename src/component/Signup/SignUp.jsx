@@ -1,12 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
-import { AuthContext } from '../Provider/AuthProvider';
+import { AuthContext, auth } from '../Provider/AuthProvider';
 import swal from "sweetalert";
 import { useState } from 'react';
 import { FaEye, FaEyeSlash} from "react-icons/fa";
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { Link } from 'react-router-dom';
-import auth from "../../Firebase/firebase.config";
+
 
 const SignUp = () => {
 
@@ -120,7 +120,7 @@ const SignUp = () => {
            {
               registerError && <p className="w-64 pl-4 pr-4 pb-2 text-[#fc032c] text-sm italic  " >{registerError}</p>
            }
-           <p className=' pl-4 pr-4 pb-2' >Already have an account please<Link className=' text-blue-600 ' to="/login">Login</Link>  </p>
+           <p className=' pl-4 pr-4 pb-2' >Already have an account please<Link className=' text-blue-600 ' to="/">Login</Link>  </p>
           </div>
         </div>
       </div>

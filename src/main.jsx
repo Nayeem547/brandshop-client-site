@@ -14,6 +14,7 @@ import SignIn from "./component/Signup/SignIn.jsx";
 import SignUp from "./component/Signup/SignUp.jsx";
 import AuthProvider from "./component/Provider/AuthProvider.jsx";
 import Blog from "./component/Blog/Blog.jsx";
+import PrivateRoute from "./component/PrivateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,8 +43,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/carDetails/:id",
-        element: <CarDetailsMap></CarDetailsMap>,
-        loader: ({params}) => fetch(`http://localhost:5000/cart/${params.ObjectId}`)
+        element: <PrivateRoute><CarDetailsMap></CarDetailsMap></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/cart/details/${params.id}`)
       },
       {
         path: "/signin",

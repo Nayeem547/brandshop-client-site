@@ -1,8 +1,15 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 const CardBox = ({cart}) => {
     const {_id, names, image, Brand,  Price,  description} = cart;
+      
+    // useEffect(() => {
+    //   fetch(`http://localhost:5000/cartCategory/${brandName}`)
+    //     .then((res) => res.json())
+    //     .then((data) => setBrandInfo(data[0]));
+    // }, []);
     
     return (
         <div className="   " >

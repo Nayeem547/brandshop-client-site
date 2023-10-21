@@ -1,11 +1,11 @@
 import React from 'react';
-import { AuthContext } from '../Provider/AuthProvider';
+import { AuthContext, auth } from '../Provider/AuthProvider';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react';
 import { FaEye, FaEyeSlash} from "react-icons/fa";
-import auth from "../../Firebase/firebase.config";
+
 
 const SignIn = () => {
 
@@ -112,7 +112,7 @@ const SignIn = () => {
          {
             registerError && <p className="w-64 pl-4 pr-4 pb-2 text-[#fc032c] text-sm italic  " >{registerError}</p>
          }
-         <p className=' pl-4 pr-4 pb-2' >New to this website Please <Link className=' text-blue-400 ' to="/register">Register</Link>  </p>
+         {/* <p className=' pl-4 pr-4 pb-2' >New to this website Please <Link className=' text-blue-400 ' to="/signUp">SignUp</Link>  </p> */}
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
  export const AuthContext = createContext(null);
 
- const auth = getAuth(app);
+export const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
 
