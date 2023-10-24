@@ -17,6 +17,7 @@ import Blog from "./component/Blog/Blog.jsx";
 import PrivateRoute from "./component/PrivateRoute/PrivateRoute.jsx";
 import UpdateCart from "./component/UpdateCart/UpdateCart.jsx";
 import MyCart from "./component/MyCart/MyCart.jsx";
+import ErrorPage from "./component/ErrorPage/ErrorPage";
 // import UserInfo from "./component/Navbar/UserInfo";
 // import UserInfoMap from "./component/Navbar/UserInfoMap";
 
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
