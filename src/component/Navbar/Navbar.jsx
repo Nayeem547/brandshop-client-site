@@ -54,8 +54,8 @@ const Navbar = () => {
         <div className=" navbar-center md:navbar-start lg:navbar-start">
           <img src={logo} className=" w-[155px] h-20 " alt="" />
         </div>
-        <div className="navbar-center ">
-          <ul className=" text-md lg:text-xl font-medium flex mt-5 md:mt-0 lg:mt-0 gap-6 ">
+        <div className="navbar-center mr-3 ">
+          <ul className=" text-md  lg:text-xl font-medium flex mt-5 md:mt-0 lg:mt-0 gap-6 ">
             <li>
               <NavLink
                 to="/"

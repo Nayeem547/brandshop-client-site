@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+import Footer from "../Footer/Footer";
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);
@@ -30,8 +31,7 @@ const MyCart = () => {
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
-        if (result.isConfirmed) {
-            console.log(result.isConfirmed);
+        if (result.isConfirmed) { 
           // Send a DELETE request to remove the item from the cart
           fetch(`https://project-mongodb.vercel.app/userStore/${_id}`, {
             method: "DELETE",
@@ -55,8 +55,11 @@ const MyCart = () => {
   
 
   return (
+    <div>
+
+    
     <div className=" flex justify-center mt-16 ">
-      <ul className=" grid grid-cols-2 gap-5 items-center justify-center mx-auto ">
+      <ul className=" grid grid-cols-1 lg:grid-cols-2 gap-5 items-center justify-center mx-auto ">
         {cartItems.map((item) => (
           <li key={item._id} >
             <div className="card bg-sky-950 text-white h-[500px] w-[300px] lg:w-[500px] bg-base-100 shadow-xl">
@@ -78,6 +81,12 @@ const MyCart = () => {
           </li>
         ))}
       </ul>
+    </div>
+
+     <footer>
+        <Footer></Footer>
+     </footer>
+
     </div>
   );
 };

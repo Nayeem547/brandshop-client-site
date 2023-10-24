@@ -78,7 +78,7 @@ const router = createBrowserRouter([
       {
         path: "/Updatecart/:id",
         element: <UpdateCart></UpdateCart>,
-        loader: ({params}) => fetch(`https://project-mongodb.vercel.app/cart/${params.id}`)
+        loader: ({params}) => fetch(`https://project-mongodb.vercel.app/cart/details/${params.id}`)
       }
     ],
   },
