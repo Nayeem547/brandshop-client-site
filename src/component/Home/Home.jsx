@@ -18,8 +18,8 @@ useEffect(() => {
         <Banner></Banner>
       </div>
 
-      <div className=" pt-10 items-center text-center flex justify-center flex-col gap-5 bg-sky-950 " >
-      <h2 className='  text-3xl text-white font-extrabold ' >Brand Category</h2>
+      <div className=" pt-10 items-center text-center flex justify-center flex-col gap-5  " >
+      <h2 className='  text-3xl  font-extrabold ' >Brand Category</h2>
        <Cardmap cart={cart} ></Cardmap>
       </div>
       <div>

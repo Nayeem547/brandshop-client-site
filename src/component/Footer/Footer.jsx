@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         
             <footer className=" mt-24  ">
-            <div className=" bg-sky-950 flex justify-center flex-col   p-32  ">
+            <div className=" bg-black flex justify-center flex-col   p-32  ">
         <div className=" mt-[-40px] pb-14 " >
           <h2 className=" text-3xl font-semibold text-white font-mono ">
             AUTO CAR

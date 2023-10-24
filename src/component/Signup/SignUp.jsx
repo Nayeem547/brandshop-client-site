@@ -5,12 +5,18 @@ import swal from "sweetalert";
 import { useState } from 'react';
 import { FaEye, FaEyeSlash} from "react-icons/fa";
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../hook/useAuth';
 
 
 const SignUp = () => {
 
     const provider = new GoogleAuthProvider();
+     
+    const {createUser} = useAuth();
+   
+    const navigate = useNavigate()
+   
 
     const handleGooglSignIN = () => {
         signInWithPopup(auth, provider)
@@ -19,7 +25,7 @@ const SignUp = () => {
     }
 
 
-    const {createUser} = useContext(AuthContext);
+    // const {createUser} = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
 
@@ -29,9 +35,12 @@ const SignUp = () => {
     const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-    
+
+        const name = form.get('name');
+        const img = form.get('img');
         const email = form.get('email');
         const password = form.get('password');
+
         console.log(email, password);
           
         if(password.length < 6){
@@ -42,22 +51,26 @@ const SignUp = () => {
             setRegisterError('Your Password should be at least one Upper Case Charecters')
             return;
         }
-    
+        else if (!/[$&+,:;=?@#|'<>.^*()%!-]/.test(password)) {
+            setRegisterError('Your password should not contain special characters');
+            return;
+        }
         setRegisterError('');
         setSuccess();
     
-        createUser( email, password)
+        createUser( email, password, name, img)
         .then(result =>{
             console.log(result.user);
-            const user = {email};
-            fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/user`, {
+            const user = {email, name, img};
+            
+            fetch(`https://project-mongodb.vercel.app/user`, {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
                 },
                 body: JSON.stringify(user),
               })
-                .then((res) => res.json())
+                .then((res) => res.json() )
                 .then(data => {
                     console.log(data);
                 })
@@ -76,6 +89,33 @@ const SignUp = () => {
               
             <form onSubmit={handleRegister} className="card-body">
             <h2 className=" text-2xl font-semibold " >Please SignUp</h2>
+
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Image</span>
+                </label>
+                <input
+                  name="img"
+                  type="text"
+                  placeholder="img"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

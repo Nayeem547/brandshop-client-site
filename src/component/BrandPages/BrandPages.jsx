@@ -14,7 +14,7 @@ const BrandPages = ({ cart }) => {
   const [brandInfo, setBrandInfo] = useState({});
 
   useEffect(() => {
-    fetch(`https://project-mongodb-rizjsodj7-nayeem547s-projects.vercel.app/cartCategory/${brandName}`)
+    fetch(`https://project-mongodb.vercel.app/cartCategory/${brandName}`)
       .then((res) => res.json())
       .then((data) => setBrandInfo(data[0]));
   }, []);
@@ -33,69 +33,37 @@ const BrandPages = ({ cart }) => {
 
   return (
     <div>
-      <div className="banner-slider w-[270px] md:w-[700px] lg:w-[1400px]  justify-center items-center text-center mx-auto ">
+
+
+      <div className="  " >
+
+      
+      <div className="banner-slider  w-[250px] md:w-[700px] lg:w-[1400px]    justify-center items-center text-center mx-auto ">
         <Slider {...settings}>
           <div className="slide relative">
             <img
-              className=" w-full h-[500px] "
+              className=" w-[100%] h-[250px] md:h-[300px] lg:h-[500px] "
               src={brandInfo.banner_image_one}
             />
-            <div className=" space-y-4 text-center flex flex-col justify-center text-white items-center heading  ">
-              <p
-                data-aos="zoom-in-down"
-                className=" text-lg md:text-xl lg:text-2xl font-light italic  "
-              >
-                We are the Event Management Specialists
-              </p>
-              <h1
-                data-aos="zoom-in-down"
-                className=" md:text-2xl text-xl lg:text-5xl font-sans font-medium "
-              >
-                WE PERSONALIZE YOUR WEDDING EVENTS{" "}
-              </h1>
-            </div>
+            
           </div>
           <div className="slide">
             <img
-              className=" w-full h-[500px] "
+              className=" w-[100%] h-[250px] md:h-[300px] lg:h-[500px] "
               src={brandInfo.banner_image_two}
             />
-            <div className=" space-y-4 text-center flex flex-col justify-center text-white items-center heading  ">
-              <p
-                data-aos="zoom-in-down"
-                className=" text-lg md:text-xl lg:text-2xl font-light italic  "
-              >
-                Birthday Event Management Specialists
-              </p>
-              <h1
-                data-aos="zoom-in-down"
-                className="md:text-2xl text-xl lg:text-5xl font-sans font-medium "
-              >
-                CELEBRATE YOUR EVENTSTHAT LASTS LONGER{" "}
-              </h1>
-            </div>
+            
           </div>
           <div className="slide">
             <img
-              className=" w-full h-[500px] "
+              className=" w-[100%] h-[250px] md:h-[300px]  lg:h-[500px] "
               src={brandInfo.banner_image_three}
             />
-            <div className=" space-y-4 text-center flex flex-col justify-center text-white items-center heading  ">
-              <p
-                data-aos="zoom-in-down"
-                className=" text-lg md:text-xl lg:text-2xl font-light italic  "
-              >
-                Birthday Event Management Specialists
-              </p>
-              <h1
-                data-aos="zoom-in-down"
-                className="md:text-2xl text-xl lg:text-5xl font-sans font-medium "
-              >
-                CELEBRATE YOUR EVENTSTHAT LASTS LONGER{" "}
-              </h1>
-            </div>
+            
           </div>
         </Slider>
+      </div>
+
       </div>
 
       <div  >

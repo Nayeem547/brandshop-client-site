@@ -45,6 +45,11 @@ const SignIn = () => {
         setRegisterError('Your Password should be at least one Upper Case Charecters')
         return;
     }
+    else if (!/^[a-zA-Z0-9]+$/.test(password)) {
+        setRegisterError('Your password should not contain special characters');
+        return;
+    }
+    
 
     setRegisterError('');
     setSuccess();

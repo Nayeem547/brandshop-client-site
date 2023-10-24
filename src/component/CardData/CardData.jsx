@@ -24,9 +24,9 @@ const CardData = ({}) => {
 
     
     return (
-        <div>
-            <h1>Card item : </h1>
-            <div className=' grid grid-cols-1 gap-4  lg:grid-cols-2 '>
+        <div className=' flex justify-center flex-col items-center mt-24 ' >
+            <h1 className=' lg:text-3xl font-extrabold  twxt-xl mb-16 ' >Car item</h1>
+            <div className=' grid grid-cols-1 gap-4 justify-center items-center   lg:grid-cols-2 '>
 
             
             {
